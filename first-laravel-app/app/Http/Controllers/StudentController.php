@@ -10,4 +10,18 @@ class StudentController extends Controller
     {
         return "Hello from Student Controller :)";
     }
+
+    public function attendance()
+    {
+        return "Attendance Dashboard";
+    }
+
+    public function profile(?string $name = "User")
+    {
+        return [
+            "name" => $name,
+            "cgpa" => 9.85,
+            "attendance" => 72
+        ];
+    }
 }
