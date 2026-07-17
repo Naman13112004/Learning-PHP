@@ -26,7 +26,7 @@ class CourseController extends Controller
 
     public function store()
     {
-        // Create multiple or all courses and store in db
+        // Create a new course and store in db
         return response()->json([
             "message" => "Courses created successfully"
         ], 201);
