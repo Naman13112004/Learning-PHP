@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    use HasFactory;
+    public $timestamps = false;
+    protected $fillable = [
+        "name",
+        "total_marks",
+        "semester"
+    ]; 
 }

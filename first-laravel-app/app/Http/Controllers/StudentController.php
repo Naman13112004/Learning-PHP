@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Student;
 
 class StudentController extends Controller
 {
@@ -23,5 +24,10 @@ class StudentController extends Controller
             "cgpa" => 9.85,
             "attendance" => 72
         ];
+    }
+
+    public function index()
+    {
+        return Student::all();
     }
 }

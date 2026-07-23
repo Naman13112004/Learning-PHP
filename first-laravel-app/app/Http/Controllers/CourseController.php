@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreCourseRequest;
+use App\Models\Course;
 
 class CourseController extends Controller
 {
@@ -24,11 +26,16 @@ class CourseController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(StoreCourseRequest $request)
     {
         // Create a new course and store in db
+        $course = Course::create(
+            $request->validated()
+        );
+
         return response()->json([
-            "message" => "Courses created successfully"
+            "message" => "Courses created successfully",
+            "course" => $course
         ], 201);
     }
 
